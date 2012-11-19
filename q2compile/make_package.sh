@@ -25,4 +25,5 @@ rm action/game*.so
 
 # tar
 cd $pkg_dir 
+rm aq2-basesrv-pkg-$ver.tgz
 tar czvf aq2-basesrv-pkg-$ver.tgz *
