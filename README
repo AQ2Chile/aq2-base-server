@@ -1,0 +1,90 @@
+Action Quake2 - Base Server Installer by Paul Klumpp (2012-11-18)
+
+It's always the same in Linux: To make it work on your system, some quake2 
+stuff needs to be compiled. Please follow these simple instructions.
+
+Change into the q2compile/ directory:
+
+	cd q2compile
+
+
+Start the magic script:
+
+	./make_and_put_all.sh
+
+
+Change to your q2 server directory:
+
+	cd ../q2srv/
+
+
+Edit the gs_starter.cfg and try to study what it says:
+
+	nano gs_starter.cfg 
+
+	Note: The ACTIVATE variable defines which instances get run 
+	by ./gs_starter.sh startwatch. And obviously, the Rest of the 
+	variables define starting parameters for these instances.
+
+
+Edit action/h_passwords.cfg so you have a rcon_password that you actually know:
+
+	nano action/h_passwords.cfg
+
+
+Start the gs_starter.sh script... With default gs_starter.cfg, it will watch 
+over your Action Quake 2 game server instances 1, 2 and 3:
+
+	screen ./gs_starter.sh startwatch
+
+
+IT'S DONE. YOU'RE READY TO GO!
+But if you're new to Linux and "screen", you have to know the following!
+
+
+You can get a list of running gameserver instances with:
+
+	screen -ls
+
+
+You can attach to a running gameserver instance with:
+
+	screen -x gs1
+	or
+	screen -x gs2   etc.
+
+
+You can detach from a gameserver instance with:
+
+	Press  ctrl+a  then  press d
+
+
+You can kill ALL instances with:
+
+	./gs_starter.sh stopall
+	Note: If they were watched by startwatch, the instances will come up again.
+
+
+You can kill an instance X with:
+
+	./gs_starter.sh stop X
+	Note: If it was watched by startwatch, the instance will come up again.
+
+
+You can start an instance X with:
+
+	./gs_starter.sh start X
+	Note: This does not necessarily mean that this instance is watched.
+
+
+You can stop watching the instances with:
+
+	./gs_starter.sh stopwatch
+
+
+For help, just start it:
+
+	./gs_starter.sh
+
+
+And now, have fun!

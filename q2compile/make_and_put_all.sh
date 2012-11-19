@@ -15,12 +15,12 @@ function checkinstalled {
 	fi
 }
 					
-software="git make cc realpath lua"
+software="git make cc realpath lua screen"
 
 for s in $software; do
 
 	if [ ! $(checkinstalled "$s") ]; then
-		echo "$s not found on your system. Please have a system administrator install it!"
+		echo "'$s' not found on your system. Please have a system administrator install it!"
 		return 0
 	fi
 done
