@@ -4,6 +4,7 @@
 ver=1.0
 
 cwd=$(pwd)
+q2dir=$cwd/../q2srv/
 pkg_dir=$cwd/../
 
 
@@ -15,6 +16,12 @@ for s in $gits; do
 		rm -rf "$s"
 	fi
 done
+
+# q2dir cleanup
+cd $q2dir
+rm q2proded
+rm gs_starter.sh
+rm action/game*.so
 
 # tar
 cd $pkg_dir 
