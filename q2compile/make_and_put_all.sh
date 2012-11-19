@@ -79,6 +79,15 @@ for idx in ${!repo[*]}; do
 	case "${repo[$idx]}" in
 		aq2-tng)
 			cp game$ARCH.so $q2srv/action/game$ARCH.real.so
+			cd ..
+			cd action
+			cp prules.ini $q2srv/action/
+			cp -r doc/ $q2srv/action/
+			cp -r models/ $q2srv/action/
+			cp -r pics/ $q2srv/action/
+			cp -r players/ $q2srv/action/
+			cp -r sound/ $q2srv/action/
+			cp -r tng/ $q2srv/action/
 		;;
 		q2admin)
 			cp game$ARCH.so $q2srv/action/game$ARCH.so
