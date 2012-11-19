@@ -78,32 +78,32 @@ for idx in ${!repo[*]}; do
 	# install it
 	case "${repo[$idx]}" in
 		aq2-tng)
-			cp game$ARCH.so $q2srv/action/game$ARCH.real.so
+			cp -v game$ARCH.so $q2srv/action/game$ARCH.real.so
 			cd ..
 			cd action
-			cp prules.ini $q2srv/action/
-			cp -r doc/ $q2srv/action/
-			cp -r models/ $q2srv/action/
-			cp -r pics/ $q2srv/action/
-			cp -r players/ $q2srv/action/
-			cp -r sound/ $q2srv/action/
-			cp -r tng/ $q2srv/action/
+			cp -v prules.ini $q2srv/action/
+			cp -vr doc/ $q2srv/action/
+			cp -vr models/ $q2srv/action/
+			cp -vr pics/ $q2srv/action/
+			cp -vr players/ $q2srv/action/
+			cp -vr sound/ $q2srv/action/
+			cp -vr tng/ $q2srv/action/
 		;;
 		q2admin)
-			cp game$ARCH.so $q2srv/action/game$ARCH.so
-			cp -r plugins/ $q2srv/
+			cp -v game$ARCH.so $q2srv/action/game$ARCH.so
+			cp -vr plugins/ $q2srv/
 		;;
 		q2a_mvd)
 			cp mvd.lua $q2srv/plugins/
 		;;
 		gs_starter)
-			cp gs_starter.sh $q2srv/
+			cp -v gs_starter.sh $q2srv/
 			if [ ! -f "$q2srv/gs_starter.cfg" ]; then
-				cp gs_starter.cfg $q2srv
+				cp -v gs_starter.cfg $q2srv
 			fi
 		;;
 		q2pro)
-			cp q2proded $q2srv/
+			cp -v q2proded $q2srv/
 		;;
 
 	esac
