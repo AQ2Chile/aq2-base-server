@@ -24,6 +24,6 @@ rm gs_starter.sh
 rm action/game*.so
 
 # tar
-cd $pkg_dir 
+cd $pkg_dir/../
 rm aq2-basesrv-pkg-$ver.tgz
-tar czvf aq2-basesrv-pkg-$ver.tgz *
+tar --exclude-vcs -cvf - aq2-basesrv/ | gzip -9 - > aq2-basesrv-pkg-$ver.tgz
