@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Paul Klumpp 2012-11-19
 
 cwd=$(pwd)
 q2srv=$cwd/../q2srv/
