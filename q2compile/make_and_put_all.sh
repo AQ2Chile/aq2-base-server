@@ -54,7 +54,7 @@ repo[5]="q2pro"
 url[5]="http://git.skuller.net/q2pro"
 makeit[5]="cp ../q2proconfig ./.config && make clean && INCLUDES='-DUSE_PACKETDUP=1' make q2proded"
 
-ARCH=$(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
+ARCH=$(uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
 
 for idx in ${!repo[*]}; do
 	echo
