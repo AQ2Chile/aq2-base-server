@@ -99,6 +99,7 @@ for idx in ${!repo[*]}; do
 
 	esac
 
+	cd $cwd
 
 	echo
 done
