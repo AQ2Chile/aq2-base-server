@@ -22,6 +22,7 @@ cd $q2dir
 rm q2proded
 rm gs_starter.sh
 rm action/game*.so
+rm -rf plugins
 
 # tar
 cd $pkg_dir/../
