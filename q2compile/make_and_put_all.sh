@@ -28,6 +28,10 @@ done
 echo "Before continuing, make sure you have the following installed:"
 echo "* Lua 5.1, only 5.1!, dev headers"
 echo "* libz, also known as zlib"
+echo 
+echo "  PRESS ENTER"
+echo
+read
 
 
 repo[1]="aq2-tng"
