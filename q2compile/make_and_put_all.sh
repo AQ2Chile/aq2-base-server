@@ -5,6 +5,14 @@ cwd=$(pwd)
 q2srv=$cwd/../q2srv/
 cd $cwd
 
+
+if [ "${USER}" == "root" ]; then
+	echo "Nono! Don't run this as root! Don't!"
+	echo "Switch to a normal user!"
+	echo
+	exit
+fi
+
 function checkinstalled {
 	if [ "$1" != "" ]; then
 		woot=$(which "$1" 2> /dev/null)
