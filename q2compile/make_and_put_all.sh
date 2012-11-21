@@ -7,32 +7,38 @@ cd $cwd
 
 function checkinstalled {
 	if [ "$1" != "" ]; then
-		I=$(which "$1")
-		if [ -f "$I" ]; then
+		woot=$(which "$1" 2> /dev/null)
+		if [ -f "$woot" ]; then
 			echo 1
 		else
 			echo 0
 		fi
 	fi
 }
-					
-software="git make cc realpath lua screen"
-
-for s in $software; do
-
-	if [ ! $(checkinstalled "$s") ]; then
-		echo "'$s' not found on your system. Please have a system administrator install it!"
-		return 0
-	fi
-done
 
 echo "Before continuing, make sure you have the following installed:"
+echo "* git"
+echo "* make"
+echo "* cc"
+echo "* screen"
 echo "* Lua 5.1, only 5.1!, dev headers"
 echo "* libz, also known as zlib"
 echo 
 echo "  PRESS ENTER"
 echo
 read
+
+
+
+software="git make cc realpath lua screen"
+for soft in $software; do
+
+	see=$(checkinstalled "$soft")
+	if [ $see -eq 0 ]; then
+		echo "'$soft' not found on your system. Please have a system administrator install it!"
+		exit
+	fi
+done
 
 
 repo[1]="q2admin"
@@ -104,7 +110,7 @@ for idx in ${!repo[*]}; do
 				echo
 				echo "Then start this script again."
 				echo
-				return 0
+				exit
 			fi
 		;;
 		q2a_mvd)
