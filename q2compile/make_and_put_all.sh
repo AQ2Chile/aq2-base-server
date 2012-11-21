@@ -133,3 +133,11 @@ for idx in ${!repo[*]}; do
 	echo
 done
 
+
+echo 
+echo "Everything should be in place now."
+echo
+echo "Please review the files h_passwords.cfg, aq2_*.cfg in 'q2srv/action'."
+echo "Other than that ;) read the README file"
+echo
+
