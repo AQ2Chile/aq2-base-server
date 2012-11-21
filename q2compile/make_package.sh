@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Paul Klumpp 2012-11-19
 
-ver=1.0
+ver=1.1
 
 cwd=$(pwd)
 q2dir=$cwd/../q2srv/
