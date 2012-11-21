@@ -22,7 +22,7 @@ echo "* make"
 echo "* cc"
 echo "* screen"
 echo "* Lua 5.1, only 5.1!, dev headers"
-echo "* libz, also known as zlib"
+echo "* libz, also known as zlib1g-dev on Debian/Ubuntu"
 echo 
 echo "  PRESS ENTER"
 echo
