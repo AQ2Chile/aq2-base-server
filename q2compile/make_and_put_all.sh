@@ -35,13 +35,13 @@ echo
 read
 
 
-repo[1]="aq2-tng"
-url[1]="https://github.com/hifi/aq2-tng.git"
-makeit[1]="cd source && pwd && make clean && make"
+repo[1]="q2admin"
+url[1]="https://github.com/hifi/q2admin.git"
+makeit[1]="make clean && make"
 
-repo[2]="q2admin"
-url[2]="https://github.com/hifi/q2admin.git"
-makeit[2]="make clean && make"
+repo[2]="aq2-tng"
+url[2]="https://github.com/hifi/aq2-tng.git"
+makeit[2]="cd source && pwd && make clean && make"
 
 repo[3]="q2a_mvd"
 url[3]="git://b4r.org/q2a_mvd"
@@ -90,8 +90,22 @@ for idx in ${!repo[*]}; do
 			cp -vr tng/ $q2srv/action/
 		;;
 		q2admin)
-			cp -v game$ARCH.so $q2srv/action/game$ARCH.so
-			cp -vr plugins/ $q2srv/
+			if [ -f "game$ARCH.so" ]; then
+				cp -v game$ARCH.so $q2srv/action/game$ARCH.so
+				cp -vr plugins/ $q2srv/
+			else
+				echo "W0000000t .. q2admin did not compile. Something was wrong."
+				echo "It is most possible because Lua5.1 is missing."
+				echo
+				echo "If you are on Debian or Ubuntu, please try to install the following"
+				echo "package server wide: liblua5.1-0-dev"
+				echo
+				echo "To do that, try: 'sudo apt-get install liblua5.1-0-dev'"
+				echo
+				echo "Then start this script again."
+				echo
+				return 0
+			fi
 		;;
 		q2a_mvd)
 			cp mvd.lua $q2srv/plugins/
