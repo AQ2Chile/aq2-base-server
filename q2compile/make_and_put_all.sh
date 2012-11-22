@@ -123,7 +123,10 @@ for idx in ${!repo[*]}; do
 			fi
 		;;
 		q2a_mvd)
-			cp mvd.lua $q2srv/plugins/
+			cp -v mvd.lua $q2srv/plugins/
+			if [ ! -f "$q2srv/plugins/mvd_transfer.sh" ]; then
+				cp -uv mvd_transfer.sh $q2srv/plugins/
+			fi
 		;;
 		gs_starter)
 			cp -v gs_starter.sh $q2srv/
