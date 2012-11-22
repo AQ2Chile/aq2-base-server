@@ -29,6 +29,7 @@ echo "* git"
 echo "* make"
 echo "* cc"
 echo "* screen"
+echo "* realpath"
 echo "* Lua 5.1, only 5.1!, dev headers"
 echo "* libz, also known as zlib1g-dev on Debian/Ubuntu"
 echo 
