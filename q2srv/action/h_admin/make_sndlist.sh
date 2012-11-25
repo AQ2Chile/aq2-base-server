@@ -10,7 +10,7 @@ ACTIONDIR=$(pwd)
 SNDDIR=$ACTIONDIR/sound/user
 CFGDIR=$ACTIONDIR/config
 cd $SNDDIR
-ls -1 *wav > $CFGDIR/sndlist.ini.current
+find -type f -iname "*wav" | sed -e 's/\.\///' $CFGDIR/sndlist.ini.current
 cd $CFGDIR
 cp sndlist.ini.header sndlist.ini
 sort sndlist.ini.current >> sndlist.ini

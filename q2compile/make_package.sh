@@ -19,13 +19,22 @@ done
 
 # q2dir cleanup
 cd $q2dir
-rm q2proded
-rm gs_starter.sh
-rm gs*sh
-rm action/game*.so
-rm -rf plugins
+rm -vf q2proded 2> /dev/null
+rm -vf gs_starter.sh
+rm -vf gs*sh
+rm -vf action/game*.so
+rm -vrf plugins
 
+# editor backup cleanup
+cd $pkg_dir
+fuppa=$(find -type f -iname *~)
+for x in $fuppa; do
+	rm -v "$x"
+done
+
+# building package
 # tar
 cd $pkg_dir/../
-rm aq2-basesrv-pkg-$ver.tgz
+rm -vf aq2-basesrv-pkg-$ver.tgz
 tar --exclude-vcs -cvf - aq2-basesrv/ | gzip -9 - > aq2-basesrv-pkg-$ver.tgz
+cp -v aq2-basesrv-pkg-$ver.tgz aq2-basesrv-pkg-latest.tgz
