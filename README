@@ -10,7 +10,7 @@ Change into the q2compile/ directory:
 
 Start the magic script:
 
-	./make_and_put_all.sh
+	./make_and_put_all.sh clean
 
 
 Change to your q2 server directory:

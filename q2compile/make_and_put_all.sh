@@ -112,7 +112,7 @@ function main {
     repo[5]="q2pro"
     url[5]="http://git.skuller.net/q2pro"
     cleanit[5]="make clean"
-    makeit[5]="cp -v ../q2proconfig ./.config && make clean && INCLUDES='-DUSE_PACKETDUP=1' make q2proded"
+    makeit[5]="cp -v ../q2proconfig ./.config && INCLUDES='-DUSE_PACKETDUP=1' make q2proded"
 
     ARCH=$(uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
 
@@ -135,7 +135,7 @@ function main {
         if [ $level -gt 2 ]; then
             # clean it
             cd $cwd/${repo[$idx]}
-        eval ${cleanit[$idx]}
+            eval ${cleanit[$idx]}
         fi
 
         if [ $level -gt 1 ]; then
