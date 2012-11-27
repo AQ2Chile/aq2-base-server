@@ -79,7 +79,7 @@ Edit the gs_starter.cfg and try to study what it says:
 
   nano gs_starter.cfg 
 
-	Note: The ACTIVATE variable defines which instances get run 
+  Note: The ACTIVATE variable defines which instances get run 
         by ./gs_starter.sh startwatch. And obviously, the rest of the 
         variables define starting parameters for these instances.
 
