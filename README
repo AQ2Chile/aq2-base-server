@@ -1,21 +1,33 @@
+===============================================================================
 Action Quake2 - Base Server Installer by Paul Klumpp (2012-11-18)
 
 It's always the same in Linux: To make it work on your system, some quake2 
 stuff needs to be compiled. Please follow these simple instructions.
 
-Change into the q2compile/ directory:
+First, on Linux, be an unprivileged user. The following will create a
+"aq2-basesrv" directory, so, there is no need to create a new directory.
+Just start the the magic script by:
 
-	cd q2compile
+  curl -L https://bitbucket.org/PaulKlumpp/aq2-basesrv/raw/ba723ec3be9c076971152da77b9bd274abb53e8f/q2compile/aq2-bsrv-pkg.sh first | bash
 
 
-Start the magic script:
+For future updates, start this:
 
-	./make_and_put_all.sh clean
+  curl -L https://bitbucket.org/PaulKlumpp/aq2-basesrv/raw/ba723ec3be9c076971152da77b9bd274abb53e8f/q2compile/aq2-bsrv-pkg.sh update | bash
+
+
+Note: These magic scripts will install or update everything, but they 
+      won't overwrite your changes on configuration files.
+
+===============================================================================
+
+Now, to your job! Your job is to configure your server, so read the
+following steps carefully and learn something.
 
 
 Change to your q2 server directory:
 
-	cd ../q2srv/
+	cd aq2-basesrv/q2srv/
 
 
 Edit the gs_starter.cfg and try to study what it says:
@@ -23,8 +35,8 @@ Edit the gs_starter.cfg and try to study what it says:
 	nano gs_starter.cfg 
 
 	Note: The ACTIVATE variable defines which instances get run 
-	by ./gs_starter.sh startwatch. And obviously, the rest of the 
-	variables define starting parameters for these instances.
+	      by ./gs_starter.sh startwatch. And obviously, the rest of the 
+	      variables define starting parameters for these instances.
 
 
 Edit action/h_passwords.cfg so you have a rcon_password that you actually know:
