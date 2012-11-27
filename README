@@ -29,7 +29,7 @@ ABOUT THE ACTION QUAKE 2 MOD CONFIGURATION:
 
 Change to your q2 server action directory:
 
-	cd aq2-basesrv/q2srv/action/
+  cd aq2-basesrv/q2srv/action/
 
 
 There, you have to edit your configuration files, and set your stuff up.
@@ -41,7 +41,7 @@ See which cfg files are there:
 
 Edit h_passwords.cfg so you have a rcon_password that you actually know:
 
-	nano h_passwords.cfg
+  nano h_passwords.cfg
 
 
 Edit aq2_1.cfg, aq2_2.cfg etc so you have a nice hostname etc.
@@ -72,22 +72,22 @@ ABOUT GS STARTER:
 
 Change to your q2 server directory:
 
-	cd aq2-basesrv/q2srv/
+  cd aq2-basesrv/q2srv/
 
 
 Edit the gs_starter.cfg and try to study what it says:
 
-	nano gs_starter.cfg 
+  nano gs_starter.cfg 
 
 	Note: The ACTIVATE variable defines which instances get run 
-				by ./gs_starter.sh startwatch. And obviously, the rest of the 
-				variables define starting parameters for these instances.
+        by ./gs_starter.sh startwatch. And obviously, the rest of the 
+        variables define starting parameters for these instances.
 
 
 Start the gs_starter.sh script... With default gs_starter.cfg, it will watch 
 over your Action Quake 2 game server instances 1, 2 and 3:
 
-	screen ./gs_starter.sh startwatch
+  screen ./gs_starter.sh startwatch
 
 
 IT'S DONE. YOU'RE READY TO GO!
@@ -96,30 +96,30 @@ But if you're new to Linux and "screen", you have to read "ABOUT SCREEN".
 
 You can kill ALL instances with:
 
-	./gs_starter.sh stopall
-	Note: If they were watched by startwatch, the instances will come up again.
+  ./gs_starter.sh stopall
+  Note: If they were watched by startwatch, the instances will come up again.
 
 
 You can kill an instance X with:
 
-	./gs_starter.sh stop X
-	Note: If it was watched by startwatch, the instance will come up again.
+  ./gs_starter.sh stop X
+  Note: If it was watched by startwatch, the instance will come up again.
 
 
 You can start an instance X with:
 
-	./gs_starter.sh start X
-	Note: This does not necessarily mean that this instance is watched.
+  ./gs_starter.sh start X
+  Note: This does not necessarily mean that this instance is watched.
 
 
 You can stop watching the instances with:
 
-	./gs_starter.sh stopwatch
+  ./gs_starter.sh stopwatch
 
 
 For help, just start it:
 
-	./gs_starter.sh
+  ./gs_starter.sh
 
 
 ABOUT SCREEN:
@@ -127,20 +127,24 @@ ABOUT SCREEN:
 
 You can get a list of running gameserver instances with:
 
-	screen -ls
+  screen -ls
 
 
 You can attach to a running gameserver instance with:
 
-	screen -x gs1
-	or
-	screen -x gs2   etc.
+  screen -x gs1
+  or
+  screen -x gs2   etc.
 
 
 You can detach from a gameserver instance with:
 
-	Press  ctrl+a  then  press d
+  Press  ctrl+a  then  press d
 
 
 
 And now, have fun!
+===============================================================================
+
+vim: expandtab tabstop=2 autoindent:
+kate: space-indent on; indent-width 2; mixedindent off;
