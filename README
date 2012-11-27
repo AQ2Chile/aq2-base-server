@@ -70,6 +70,11 @@ usage which is more fun ;) :
 ABOUT GS STARTER:
 -----------------
 
+Change to your q2 server directory:
+
+	cd aq2-basesrv/q2srv/
+
+
 Edit the gs_starter.cfg and try to study what it says:
 
 	nano gs_starter.cfg 
