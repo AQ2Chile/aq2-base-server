@@ -20,15 +20,55 @@ Note: These magic scripts will install or update everything, but they
       won't overwrite your changes on configuration files.
 
 ===============================================================================
-
-Now, to your job! Your job is to configure your server, so read the
+Now, to YOUR JOB! Your job is to configure your server, so read the
 following steps carefully and learn something.
+===============================================================================
+
+ABOUT THE ACTION QUAKE 2 MOD CONFIGURATION:
+-------------------------------------------
+
+Change to your q2 server action directory:
+
+	cd aq2-basesrv/q2srv/action/
 
 
-Change to your q2 server directory:
+There, you have to edit your configuration files, and set your stuff up.
 
-	cd aq2-basesrv/q2srv/
+See which cfg files are there:
 
+  ls -1 *cfg   
+
+
+Edit h_passwords.cfg so you have a rcon_password that you actually know:
+
+	nano h_passwords.cfg
+
+
+Edit aq2_1.cfg, aq2_2.cfg etc so you have a nice hostname etc.
+
+  nano aq2_1.cfg
+  etc.
+
+
+For information about AQ2-TNG Mod settings inside those configuration files, 
+see the documentation inside the docs/ directory!!
+
+Inside the h_admin/ directory are admin helper scripts. With those little 
+scripts you can get additional maps or update your soundlist.ini.
+
+This will install cloud.bsp and update your maplist (config/maplist.ini):
+  
+  ./getmap.sh cloud
+
+
+This will update your soundlist (config/soundlist.ini) for a public server 
+usage which is more fun ;) :
+
+  ./make_sndlist.sh
+
+
+ABOUT GS STARTER:
+-----------------
 
 Edit the gs_starter.cfg and try to study what it says:
 
@@ -39,11 +79,6 @@ Edit the gs_starter.cfg and try to study what it says:
 	      variables define starting parameters for these instances.
 
 
-Edit action/h_passwords.cfg so you have a rcon_password that you actually know:
-
-	nano action/h_passwords.cfg
-
-
 Start the gs_starter.sh script... With default gs_starter.cfg, it will watch 
 over your Action Quake 2 game server instances 1, 2 and 3:
 
@@ -51,24 +86,7 @@ over your Action Quake 2 game server instances 1, 2 and 3:
 
 
 IT'S DONE. YOU'RE READY TO GO!
-But if you're new to Linux and "screen", you have to know the following!
-
-
-You can get a list of running gameserver instances with:
-
-	screen -ls
-
-
-You can attach to a running gameserver instance with:
-
-	screen -x gs1
-	or
-	screen -x gs2   etc.
-
-
-You can detach from a gameserver instance with:
-
-	Press  ctrl+a  then  press d
+But if you're new to Linux and "screen", you have to read "ABOUT SCREEN".
 
 
 You can kill ALL instances with:
@@ -97,6 +115,27 @@ You can stop watching the instances with:
 For help, just start it:
 
 	./gs_starter.sh
+
+
+ABOUT SCREEN:
+-------------
+
+You can get a list of running gameserver instances with:
+
+	screen -ls
+
+
+You can attach to a running gameserver instance with:
+
+	screen -x gs1
+	or
+	screen -x gs2   etc.
+
+
+You can detach from a gameserver instance with:
+
+	Press  ctrl+a  then  press d
+
 
 
 And now, have fun!
