@@ -8,12 +8,12 @@ First, on Linux, be an unprivileged user. The following will create a
 "aq2-basesrv" directory, so, there is no need to create a new directory.
 Just start the the magic script by:
 
-  curl -L https://bitbucket.org/PaulKlumpp/aq2-basesrv/raw/ba723ec3be9c076971152da77b9bd274abb53e8f/q2compile/aq2-bsrv-pkg.sh first | bash
+  curl -L https://bitbucket.org/PaulKlumpp/aq2-basesrv/raw/ba723ec3be9c076971152da77b9bd274abb53e8f/q2compile/aq2-bsrv-pkg.sh | bash -s first
 
 
 For future updates, start this:
 
-  curl -L https://bitbucket.org/PaulKlumpp/aq2-basesrv/raw/ba723ec3be9c076971152da77b9bd274abb53e8f/q2compile/aq2-bsrv-pkg.sh update | bash
+  curl -L https://bitbucket.org/PaulKlumpp/aq2-basesrv/raw/ba723ec3be9c076971152da77b9bd274abb53e8f/q2compile/aq2-bsrv-pkg.sh | bash -s update
 
 
 Note: These magic scripts will install or update everything, but they 
