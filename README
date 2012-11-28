@@ -19,6 +19,21 @@ For future updates, start this:
 Note: These magic scripts will install or update everything, but they 
       won't overwrite your changes on configuration files.
 
+
+Q: But, what do they really do?
+A: In fact, those two magic scripts are just a shortcut for the following steps:
+
+  git clone https://bitbucket.org/PaulKlumpp/aq2-basesrv.git  
+  or 
+  git pull # if the files already exist
+
+  cd aq2-basesrv/q2compile
+
+  ./make_and_put_all.sh clean
+  or 
+  ./make_and_put_all.sh update
+
+
 ===============================================================================
 Now, to YOUR JOB! Your job is to configure your server, so read the
 following steps carefully and learn something.
@@ -61,10 +76,12 @@ This will install cloud.bsp and update your maplist (config/maplist.ini):
   ./getmap.sh cloud
 
 
-This will update your soundlist (config/soundlist.ini) for a public server 
-usage which is more fun ;) :
+For a public server which is more fun ;), put your user wave files into 
+action/sound/user/. And then, to update your soundlist (config/soundlist.ini)
+goto action/h_admin/ and do:
 
   ./make_sndlist.sh
+
 
 
 ABOUT GS STARTER:
