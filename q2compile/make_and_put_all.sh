@@ -149,16 +149,24 @@ function main {
             # install it
             case "${repo[$idx]}" in
                 aq2-tng)
-                    cp -v game$ARCH.so $q2srv/action/game$ARCH.real.so
-                    cd ..
-                    cd action
-                    cp -v prules.ini $q2srv/action/
-                    cp -vr doc/ $q2srv/action/
-                    cp -vr models/ $q2srv/action/
-                    cp -vr pics/ $q2srv/action/
-                    cp -vr players/ $q2srv/action/
-                    cp -vr sound/ $q2srv/action/
-                    cp -vr tng/ $q2srv/action/
+                    if [ -f "game$ARCH.so" ]; then
+                        cp -v game$ARCH.so $q2srv/action/game$ARCH.real.so
+                        cd ..
+                        cd action
+                        cp -v prules.ini $q2srv/action/
+                        cp -vr doc/ $q2srv/action/
+                        cp -vr models/ $q2srv/action/
+                        cp -vr pics/ $q2srv/action/
+                        cp -vr players/ $q2srv/action/
+                        cp -vr sound/ $q2srv/action/
+                        cp -vr tng/ $q2srv/action/
+                    else
+                        echo "Whaaat? . aq2-tng did not compile. Something was wrong."
+                        echo
+                        echo "Please find the error messages of the compilation happening above and"
+                        echo "file them as an issue at https://github.com/hifi/aq2-tng"
+                        exit
+                    fi
                 ;;
                 q2admin)
                     if [ -f "game$ARCH.so" ]; then
