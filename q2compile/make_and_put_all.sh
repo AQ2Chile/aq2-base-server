@@ -58,15 +58,6 @@ function systemcheck {
 level=0
 
 function checkargs {
-    if [ "$1" == "" ]; then
-        echo "Usage: $0 <clean/update/install>"
-        echo
-        echo "  clean: cleans the compilation directories, compiles and installs"
-        echo "  update: compiles and installs"
-        echo "  install: just installs the binaries, which are hopefully ready"
-        echo
-        exit
-    fi
 
     case "$1" in
         clean)
@@ -78,8 +69,16 @@ function checkargs {
         install)
             level=1
         ;;
+        *)
+            echo "Usage: $0 <clean/update/install>"
+            echo
+            echo "  clean: cleans the compilation directories, compiles and installs"
+            echo "  update: compiles and installs"
+            echo "  install: just installs the binaries, which are hopefully ready"
+            echo
+            exit
+        ;;
     esac
-
 
 }
 
@@ -161,7 +160,7 @@ function main {
                         cp -vr sound/ $q2srv/action/
                         cp -vr tng/ $q2srv/action/
                     else
-                        echo "Whaaat? . aq2-tng did not compile. Something was wrong."
+                        echo "Whaaat? 'aq2-tng' did not compile. Something was wrong."
                         echo
                         echo "Please find the error messages of the compilation happening above and"
                         echo "file them as an issue at https://github.com/hifi/aq2-tng"
@@ -201,7 +200,23 @@ function main {
                     fi
                 ;;
                 q2pro)
-                    cp -v q2proded $q2srv/
+                    if [ -f "q2proded" ]; then
+                        cp -v q2proded $q2srv/
+                    else
+                        echo "Errm... q2pro dedicated did not compile. Something was wrong."
+                        echo
+                        echo "It's possible that ZLIB is missing."
+                        echo "Or you're just using 'install' as parameter and forgot to compile q2proded first."
+                        echo
+                        echo "If you are on Debian or Ubuntu, please try to install the following"
+                        echo "package server wide: zlib1g-dev"
+                        echo
+                        echo "To do that, try: 'sudo apt-get install zlib1g-dev'"
+                        echo
+                        echo "Then start this script again."
+                        echo
+                        exit
+                    fi
                 ;;
 
             esac
