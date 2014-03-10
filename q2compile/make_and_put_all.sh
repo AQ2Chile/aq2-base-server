@@ -99,12 +99,12 @@ function main {
     makeit[2]="cd source && pwd && make"
 
     repo[3]="q2a_mvd"
-    url[3]="git://b4r.org/q2a_mvd"
+    url[3]="https://gitlab.netdome.biz/pklumpp/q2a_mvd.git"
     cleanit[3]=""
     makeit[3]=""
 
     repo[4]="gs_starter"
-    url[4]="git://b4r.org/gs_starter"
+    url[4]="https://gitlab.netdome.biz/pklumpp/linux-gameserver-starter.git"
     cleanit[4]=""
     makeit[4]=""
 
@@ -122,7 +122,7 @@ function main {
         echo "$idx: ${repo[$idx]} from ${url[$idx]}"
         if [ ! -d "${repo[$idx]}" ]; then
             echo "Source dir missing, we get it"
-            git clone ${url[$idx]}
+            git clone ${url[$idx]} ${repo[$idx]}
         else
             echo "Source dir exists, we update it"
             cd $cwd/${repo[$idx]} 
