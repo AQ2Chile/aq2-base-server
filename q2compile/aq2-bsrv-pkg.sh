@@ -82,7 +82,7 @@ function main {
     systemcheck
 
     repo[1]="aq2-basesrv"
-    url[1]="https://PaulKlumpp@bitbucket.org/PaulKlumpp/aq2-basesrv.git"
+    url[1]="https://gitlab.netdome.biz/pklumpp/aq2-base-server.git"
 
     ARCH=$(uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
 
@@ -94,7 +94,7 @@ function main {
             echo "$idx: ${repo[$idx]} from ${url[$idx]}"
             if [ ! -d "${repo[$idx]}" ]; then
                 echo "git dir missing, we get it"
-                git clone ${url[$idx]}
+                git clone ${url[$idx]} ${repo[$idx]}
             else
                 echo "git dir exists, we update it"
                 cd $cwd/${repo[$idx]} 
