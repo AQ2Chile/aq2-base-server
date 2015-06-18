@@ -122,11 +122,11 @@ function main {
         echo "$idx: ${repo[$idx]} from ${url[$idx]}"
         if [ ! -d "${repo[$idx]}" ]; then
             echo "Source dir missing, we get it"
-            git clone ${url[$idx]} ${repo[$idx]}
+            GIT_SSL_NO_VERIFY=true git clone ${url[$idx]} ${repo[$idx]}
         else
             echo "Source dir exists, we update it"
             cd $cwd/${repo[$idx]} 
-            git pull
+            GIT_SSL_NO_VERIFY=true git pull
             cd ..
         fi
 
